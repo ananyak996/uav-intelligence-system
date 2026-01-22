@@ -1,53 +1,56 @@
 # UAV Intelligence System
 
-An applied UAV intelligence project focused on behavioral security analysis,
-navigation sensor fusion, and ground-station telemetry visualization under
-noisy, real-world conditions.
+An applied UAV intelligence project integrating machine learning–based security analysis,
+navigation sensor fusion, and computer vision–based situational awareness under noisy,
+real-world conditions.
 
-The system demonstrates how classical machine learning and lightweight
-sensor fusion techniques can be combined to improve robustness and
-decision-making in autonomous aerial platforms.
+The system demonstrates how multiple intelligence layers—behavioral analysis, state
+estimation, and visual perception—can work together to support decision-making in
+autonomous aerial platforms.
 
 ---
 
-## Overview
+## System Overview
 
-This repository implements a modular UAV intelligence system with three
-cooperating components:
+This repository implements a modular UAV intelligence stack composed of three
+cooperating subsystems:
 
 - **Security Module**  
-  Machine learning–based classification of UAV behavior to identify
-  potentially malicious or anomalous activity from telemetry data.
+  Detects potentially malicious or anomalous UAV behavior using supervised
+  machine learning models trained on behavioral telemetry.
 
 - **Navigation Module**  
-  Sensor fusion of IMU and GPS data to mitigate drift and noise in UAV
-  position estimation.
+  Mitigates sensor noise and drift by fusing IMU and GPS data to obtain stable
+  position estimates suitable for navigation and monitoring.
 
-- **Ground Station Dashboard**  
-  A lightweight telemetry dashboard that simulates live UAV data streaming
-  and visualizes navigation outputs in real time.
+- **Perception Module**  
+  Provides situational awareness using computer vision to detect, track, and
+  reason about dynamic objects (pedestrians and vehicles) in urban scenes.
 
-The project emphasizes clarity, interpretability, and system-level reasoning
-over black-box solutions.
+A lightweight ground-station dashboard visualizes navigation outputs in real time,
+simulating live UAV telemetry during flight operations.
+
+The project emphasizes clarity, interpretability, and system-level reasoning over
+black-box solutions.
 
 ---
 
 ## Security Module
 
-- Performed exploratory data analysis on UAV behavioral telemetry
-- Trained and compared Logistic Regression, KNN, and SVM classifiers
-- Evaluated models using accuracy and confusion matrices
-- Analyzed false-positive vs false-negative trade-offs from a UAV
-  security perspective
+- Exploratory analysis of UAV behavioral telemetry
+- Classification using Logistic Regression, KNN, and SVM
+- Evaluation via accuracy and confusion matrices
+- Analysis of false-positive vs false-negative trade-offs from a UAV security
+  perspective
 
 ---
 
 ## Navigation Module
 
-- Demonstrated IMU-only dead reckoning drift through numerical integration
-- Analyzed GPS stability and short-term noise characteristics
-- Implemented a complementary filter to fuse inertial and GPS data
-- Compared raw and fused trajectories to validate noise reduction
+- Demonstration of IMU-only dead reckoning drift
+- Analysis of GPS noise and stability
+- Sensor fusion using a complementary filter
+- Comparison of raw and fused trajectories to validate noise reduction
 
 ---
 
@@ -55,8 +58,7 @@ over black-box solutions.
 
 - Simulates live UAV telemetry by streaming navigation data row by row
 - Dynamically updates plots to visualize navigation behavior in real time
-- Demonstrates how fused navigation outputs can be monitored during flight
-  operations from a ground station
+- Demonstrates how fused navigation outputs can be monitored from a ground station
 
 ---
 
@@ -65,7 +67,7 @@ over black-box solutions.
 - YOLOv8-based object detection for pedestrians and vehicles
 - Centroid-based tracking to maintain persistent object identities across frames
 - Temporal motion analysis to classify objects as MOVING or STATIONARY
-- Generation of an annotated output video for visual validation of perception logic
+- Generation of an annotated output video for perception validation
 
 ---
 
@@ -84,12 +86,13 @@ uav-intelligence-system/
 
 ## Technologies
 
-Python, NumPy, Pandas, Scikit-learn, Matplotlib, Streamlit
+Python, NumPy, Pandas, Scikit-learn, Matplotlib, Streamlit, OpenCV, YOLOv8
 
 ---
 
 ## Notes
 
-- Full datasets are excluded due to size and licensing constraints
-- The codebase is structured to support future extensions such as
-  vision-based perception and real-time onboard integration
+- Full datasets, model weights, and video files are excluded due to size and
+  licensing constraints.
+- The codebase is structured to support future extensions such as real-time
+  onboard integration and multi-sensor fusion.
