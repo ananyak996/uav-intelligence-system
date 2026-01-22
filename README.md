@@ -60,12 +60,22 @@ over black-box solutions.
 
 ---
 
+## Perception Module (Computer Vision & Situational Awareness)
+
+- YOLOv8-based object detection for pedestrians and vehicles
+- Centroid-based tracking to maintain persistent object identities across frames
+- Temporal motion analysis to classify objects as MOVING or STATIONARY
+- Generation of an annotated output video for visual validation of perception logic
+
+---
+
 ## Repository Structure
 
 uav-intelligence-system/
 ├── security/ # UAV behavioral classification
 ├── navigation/ # IMU–GPS sensor fusion
 ├── dashboard/ # Ground station telemetry visualization
+├── perception/ # CV-based detection, tracking, and situational awareness
 ├── data/sample/ # Small sample datasets
 ├── README.md
 └── .gitignore
