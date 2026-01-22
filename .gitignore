@@ -1,0 +1,5 @@
+# Ignore model weights
+*.pt
+
+# Ignore video files
+*.mp4
